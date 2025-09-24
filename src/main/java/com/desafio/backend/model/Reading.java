@@ -1,8 +1,13 @@
 package com.desafio.backend.model;
 
-import jakarta.persistence.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Reading {
@@ -12,16 +17,16 @@ public class Reading {
     private Long id;
 
     private String sensorId;
-    private Double value;
+    private Double sensorValue;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private LocalDateTime timestamp;
+    private LocalDateTime timestamp = LocalDateTime.now(); // inicializa automaticamente
 
     public Reading() {}
 
-    public Reading(String sensorId, Double value, LocalDateTime timestamp) {
+    public Reading(String sensorId, Double sensorValue, LocalDateTime timestamp) {
         this.sensorId = sensorId;
-        this.value = value;
+        this.sensorValue = sensorValue;
         this.timestamp = timestamp;
     }
 
@@ -32,8 +37,8 @@ public class Reading {
     public String getSensorId() { return sensorId; }
     public void setSensorId(String sensorId) { this.sensorId = sensorId; }
 
-    public Double getValue() { return value; }
-    public void setValue(Double value) { this.value = value; }
+    public Double getSensorValue() { return sensorValue; }
+    public void setSensorValue(Double sensorValue) { this.sensorValue = sensorValue; }
 
     public LocalDateTime getTimestamp() { return timestamp; }
     public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
