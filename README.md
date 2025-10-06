@@ -10,6 +10,8 @@ Davi Fernandes Coutinho - RM 550727
 
 Joao Marcos Arantes Pupo - RM 97693
 
+Nilton Miranda - RM: [97868]
+
 ## Descrição
 
 Este projeto implementa um serviço REST em Java com Spring Boot para persistir leituras de sensores em um banco de dados H2 no modo arquivo. Ele oferece endpoints para criar, listar e filtrar leituras por sensor, permitindo integração com um frontend que consome essas informações.
