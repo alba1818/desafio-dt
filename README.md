@@ -86,7 +86,8 @@ http://localhost:8081/mock/sensors.json
 - **RM:** [550727]
 - **João Marcos Arantes**
 - **RM:** [97693]
-
+- **Nilton Miranda**
+- **RM:** [97868]
 
 ---
 
