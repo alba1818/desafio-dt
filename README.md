@@ -1,93 +1,142 @@
-# Desafio Digital Twin 📱💨
+Integrantes
 
-Este projeto é uma aplicação mínima desenvolvida em React Native (com Expo) para simular a exibição de dados de sensores de um sistema Digital Twin com foco em componentes pneumáticos.
+Gabriel de Moraes Alba - RM 98212
 
-## 🚀 Funcionalidades
+Guilherme Saraiva Lustosa - RM 550423
 
-- **Tela de Splash / Login**
-  - Exibe o logo e botão “Começar”.
-- **Lista de Componentes Pneumáticos**
-  - Mostra sensores (nome, valor atual e status).
-- **Detalhe do Sensor**
-  - Histórico de dados (gráfico interativo).
-  - Botão "Atualizar" para simular re-fetch da API.
-- **Tela de Configuração**
-  - Permite definir a URL da API (usando armazenamento local).
+Davi Fernandes Coutinho - RM 550727
 
-## 🧪 Tecnologias Utilizadas
+Joao Marcos Arantes Pupo - RM 97693
 
-- [Expo CLI]
-- [React Navigation]
-- [Axios]
-- [Victory ]
-- [AsyncStorage]
+Nilton Miranda - RM: [97868]
 
-## 📂 Estrutura de Pastas
+🛰️ Projeto – Integração Frontend + Backend (Sprint 3) 🎯 Objetivo
 
-```
-desafio-dt/
-├── assets/
-│   └── logo.png
-├── mock/
-│   └── sensors.json
-├── screens/
-│   ├── HomeScreen.js
-│   ├── SensorDetailScreen.js
-│   ├── ConfigScreen.js
-│   └── SplashScreen.js
-├── utils/
-│   └── api.js
-├── App.js
-└── README.md
-```
+Esta sprint tem como objetivo integrar o aplicativo mobile em React Native com o backend em Spring Boot, substituindo os mocks por dados reais e implementando a visualização dinâmica de leituras de sensores em tempo real.
 
-## ▶️ Como Rodar o Projeto
+⚙️ Estrutura do Projeto
 
-1. **Clone o repositório:**
+O projeto é dividido em duas partes:
 
-```bash
-git clone https://github.com/alba1818/desafio-dt.git
-cd desafio-dt
-```
+Camada Tecnologia Descrição Backend Spring Boot (Java + H2) API REST responsável pelo armazenamento e fornecimento das leituras dos sensores. Frontend React Native (Expo) Aplicativo mobile para visualização e registro de novas leituras. 🚀 Instruções para Execução 🧩 1. Clonar o repositório git clone https://github.com/seuusuario/nome-do-repositorio.git cd nome-do-repositorio
 
-2. **Instale as dependências:**
+🖥️ 2. Executar o Backend (Spring Boot) ✅ Pré-requisitos:
 
-```bash
+Java 17+
+
+Maven
+
+🔧 Passos:
+
+Abra a pasta backend/ no terminal.
+
+Execute o comando:
+
+mvn spring-boot:run
+
+O backend iniciará em:
+
+http://localhost:8080
+
+Acesse o console do H2 para verificar o banco de dados (opcional):
+
+http://localhost:8080/h2-console
+
+Configurações H2 padrão:
+
+JDBC URL: jdbc:h2:file:./data/sensors-db
+
+Usuário: sa
+
+Senha: (vazia)
+
+📱 3. Executar o Frontend (React Native) ✅ Pré-requisitos:
+
+Node.js 18+
+
+Expo CLI (npm install -g expo-cli)
+
+🔧 Passos:
+
+Abra a pasta frontend/ no terminal.
+
+Instale as dependências:
+
 npm install
-```
 
-3. **Execute o projeto:**
+Inicie o app:
 
-```bash
-npx expo start --web
-```
+npx expo start
 
+Pressione W para abrir no navegador ou A/I para abrir em emulador Android/iOS.
 
-> **⚠️ Requisitos:** Node.js, Git, Expo CLI instalado globalmente (`npm install -g expo-cli`).
+🌐 4. Configurar o Endereço da API no App
 
-## 🧪 Teste com dados mock
+No app, vá até a Tela de Configurações e insira a URL do backend (caso esteja rodando localmente):
 
-- Os dados estão em: `mock/sensors.json`
-- Você pode configurar a URL local para o mock acessando a aba de **Configuração** no app:
-  
-```
-http://localhost:8081/mock/sensors.json
-```
+http://localhost:8080/api/readings
 
-> (ou simplesmente utilize `require('../mock/sensors.json')` caso prefira importar direto no código)
+💡 Se estiver testando pelo celular físico, substitua localhost pelo IP local do seu PC (exemplo: http://192.168.0.10:8080/api/readings).
 
-## 👤 Integrantes
+🧠 Endpoints da API 🔹 GET /api/readings
 
-- **Gabriel Alba**
-- **RM:** [98212]
-- **Guilherme Saraiva Lustosa**
-- **RM:** [550423]
-- **Davi Fernandes Coutinho**
-- **RM:** [550727]
-- **João Marcos Arantes**
-- **RM:** [97693]
-- **Nilton Miranda**
-- **RM:** [97868]
+Retorna todas as leituras registradas.
 
----
+Exemplo de resposta:
 
+[ { "id": 1, "sensorId": "sensor-Termo", "sensorValue": 22.7, "timestamp": "2025-09-23T19:48:34" }, { "id": 2, "sensorId": "sensor-Umid", "sensorValue": 45.1, "timestamp": "2025-09-23T19:50:12" } ]
+
+🔹 POST /api/readings
+
+Cria uma nova leitura no sistema.
+
+Exemplo de requisição:
+
+{ "sensorId": "sensor-Termo", "sensorValue": 29.3, "timestamp": "2025-09-30T14:30:00" }
+
+Resposta esperada:
+
+{ "id": 3, "sensorId": "sensor-Termo", "sensorValue": 29.3, "timestamp": "2025-09-30T14:30:00" }
+
+📊 Funcionalidades Implementadas Tela Descrição Lista de Sensores Mostra todos os sensores e suas últimas leituras vindas do backend. Tela de Detalhes Exibe o histórico de leituras em um gráfico dinâmico (VictoryChart). Registrar Leitura Permite inserir uma nova leitura mock via POST. Tela de Configurações Usuário pode alterar a URL da API diretamente no app. Indicador de Carregamento Mostrado durante as requisições.
+
+📷 Prints do App (exemplos)
+
+image image
+🧩 Tecnologias Utilizadas
+
+Backend
+
+Java 17
+
+Spring Boot
+
+Spring Data JPA
+
+Banco de dados H2
+
+Maven
+
+Frontend
+
+React Native (Expo)
+
+Axios
+
+Victory Native (para gráficos)
+
+React Navigation
+
+✅ Status da Entrega
+
+Backend com persistência em H2
+
+API com CORS habilitado
+
+Frontend consumindo API real
+
+Gráfico dinâmico com histórico
+
+Registro de novas leituras
+
+README completo com prints e exemplos
