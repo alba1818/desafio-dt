@@ -146,17 +146,17 @@ Tela de Detalhes	Exibe o histórico de leituras em um gráfico dinâmico (Victor
 Registrar Leitura	Permite inserir uma nova leitura mock via POST.
 Tela de Configurações	Usuário pode alterar a URL da API diretamente no app.
 Indicador de Carregamento	Mostrado durante as requisições.
+
 📷 Prints do App (exemplos)
 
-(Substitua pelas suas capturas reais)
 
-Lista de Sensores
-
-
-Tela de Detalhe com Gráfico
+<img width="1915" height="916" alt="image" src="https://github.com/user-attachments/assets/1e34dcdd-7a12-4fbb-8bb4-bfe721300855" />
 
 
-Tela de Configurações
+<img width="1905" height="574" alt="image" src="https://github.com/user-attachments/assets/ebc7a7b4-850b-4f77-82cd-3cf6c1fb5b96" />
+
+
+
 
 
 🧩 Tecnologias Utilizadas
