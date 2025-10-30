@@ -32,7 +32,7 @@ Backend desenvolvido em **Java + Spring Boot** para o projeto **Digital Twin**, 
 git clone https://github.com/alba1818/desafio-dt.git
 
 #### 2. Acessar a pasta
-cd backend-digitaltwin
+cd desafio-dt
 
 #### 3. Executar com Maven
 ./mvnw spring-boot:run
