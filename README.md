@@ -69,11 +69,11 @@ DELETE	/api/readings/{id}	Remove uma leitura
 
 ### **🗄️ Banco de Dados — H2**
 #### Item	Valor
-Arquivo	~/sensor-readings.h2.db
-Console H2	http://localhost:8080/h2-console
-JDBC URL	jdbc:h2:file:~/sensor-readings
-Usuário	sa
-Senha	(vazio)
+#### Arquivo	~/sensor-readings.h2.db
+#### Console H2	http://localhost:8080/h2-console
+#### JDBC URL	jdbc:h2:file:~/sensor-readings
+#### Usuário	sa
+#### Senha	(vazio)
 
 ### **👥 Integrantes do Grupo**
 #### **Gabriel de Moraes Alba	RM98212**
