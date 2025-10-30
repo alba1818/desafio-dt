@@ -34,14 +34,14 @@ Aplicativo mobile desenvolvido em React Native para visualização e envio de le
 
 1. Instale as dependências:
 
-'''bash
+
 npm install
-```
+
 2. Inicie o projeto:
 
-```bash
+
 npx expo start
-```
+
 3. Configure a URL da API na tela de "Configurações", por exemplo:
 
 http://192.168.0.24:8080/api
